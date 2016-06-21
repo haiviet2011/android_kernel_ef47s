@@ -892,49 +892,49 @@ case 16:
 	wdb[1] = 255;
 	break;
 case 15:
-	wdb[1] = 242;
+	wdb[1] = 235;
 	break;
 case 14:
-	wdb[1] = 230;
+	wdb[1] = 220;
 	break;
 case 13:
-	wdb[1] = 216;
+	wdb[1] = 205;
 	break;
 case 12:
-	wdb[1] = 204;
+	wdb[1] = 190;
 	break;
 case 11:
-	wdb[1] = 191;
+	wdb[1] = 175;
 	break;
 case 10:
-	wdb[1] = 178;
+	wdb[1] = 160;
 	break;
 case 9:
-	wdb[1] = 165;
+	wdb[1] = 145;
 	break;
 case 8:
-	wdb[1] = 152;
+	wdb[1] = 130;
 	break;
 case 7:
-	wdb[1] = 140;
+	wdb[1] = 115;
 	break;
 case 6:
-	wdb[1] = 125;
-	break;
-case 5:
-	wdb[1] = 113;
-	break;
-case 4:
 	wdb[1] = 100;
 	break;
+case 5:
+	wdb[1] = 85;
+	break;
+case 4:
+	wdb[1] = 23;
+	break;
 case 3:
-	wdb[1] = 88;
+	wdb[1] = 14;
 	break;
 case 2:
-	wdb[1] = 76;
+	wdb[1] = 5;
 	break;
 case 1:
-	wdb[1] = 63;
+	wdb[1] = 0;
 	break;
 case 0:
 	wdb[1] = 0;
