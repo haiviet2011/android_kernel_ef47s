@@ -2523,7 +2523,13 @@ config MSM_CPR
 	help
 	  Enable CPR (core power reduction) in S/W mode, where the processor
 	  get's the notification from CPR block and programs the PMIC.
-
+	  
+config RTC_SEMC_ETS
+  	bool "SEMC ETS RTC flag"
+  	default n
+  	help
+  	  This enables RTC write function with SEMC ETS
+  
 config MSM_VP_REGULATOR
 	tristate "Use MSM PMIC8029 C2 regulator"
 	depends on ARCH_MSM8625
