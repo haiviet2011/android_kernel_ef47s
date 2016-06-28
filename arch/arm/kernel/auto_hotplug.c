@@ -396,7 +396,7 @@ static void auto_hotplug_late_resume(struct early_suspend *handler)
 	pr_info("auto_hotplug: late resume handler\n");
 	flags &= ~EARLYSUSPEND_ACTIVE;
 
-	schedule_delayed_work_on(0, &hotplug_decision_work, HZ);
+	schedule_work(&hotplug_online_all_work);
 }
 
 static struct early_suspend auto_hotplug_suspend = {
