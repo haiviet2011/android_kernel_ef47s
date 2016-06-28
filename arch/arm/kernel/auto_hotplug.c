@@ -90,6 +90,7 @@ struct work_struct hotplug_boost_online_work;
 static unsigned int history[SAMPLING_PERIODS];
 static unsigned int index;
 static unsigned int min_online_cpus = 1;
+static unsigned int max_online_cpus;
  
 static int min_online_cpus_fn_set(const char *arg, const struct kernel_param *kp)
  {
@@ -97,7 +98,7 @@ static int min_online_cpus_fn_set(const char *arg, const struct kernel_param *kp
      
      ret = param_set_int(arg, kp);
      
-     ///at least 1 core must run even if set value is out of range
+     //at least 1 core must run even if set value is out of range
      if ((min_online_cpus < 1) || (min_online_cpus > CPUS_AVAILABLE))
      {
          min_online_cpus = 1;
@@ -109,15 +110,39 @@ static int min_online_cpus_fn_set(const char *arg, const struct kernel_param *kp
      return ret;
 }
 
+static int max_online_cpus_set(const char *arg, const struct kernel_param *kp)
+{
+    int ret;
+    
+    ret = param_set_int(arg, kp);
+    
+    //default to cpus available if set value is out of range
+    if ((max_online_cpus < 1) || (max_online_cpus > CPUS_AVAILABLE))
+        max_online_cpus = CPUS_AVAILABLE;
+    
+    return ret;
+}
+
 static int min_online_cpus_fn_get(char *buffer, const struct kernel_param *kp)
 {
      return param_get_int(buffer, kp);
 }
- 
+
+static int max_online_cpus_fn_get(char *buffer, const struct kernel_param *kp)
+{
+    return param_get_int(buffer, kp);
+}
+
 static struct kernel_param_ops min_online_cpus_ops = 
 {
      .set = min_online_cpus_fn_set,
      .get = min_online_cpus_fn_get,
+};
+
+static struct kernel_param_ops max_online_cpus_ops = 
+{
+    .set = max_online_cpus_fn_set,
+    .get = max_online_cpus_fn_get,
 };
 
 module_param_cb(min_online_cpus, &min_online_cpus_ops, &min_online_cpus, 0755);
