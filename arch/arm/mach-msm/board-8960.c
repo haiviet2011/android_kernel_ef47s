@@ -2755,6 +2755,10 @@ static struct msm_thermal_data msm_thermal_pdata = {
 	.limit_temp = 60,
 	.temp_hysteresis = 10,
 	.limit_freq = 918000,
+	#ifdef CONFIG_INTELLI_THERMAL
+ 	.freq_control_mask = 0xf,
+ 	.core_limit_temp_degC = 80,
+	#endif
 };
 
 #ifdef CONFIG_MSM_FAKE_BATTERY

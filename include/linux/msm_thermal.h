@@ -20,9 +20,12 @@ struct msm_thermal_data {
 	uint32_t limit_temp;
 	uint32_t temp_hysteresis;
 	uint32_t limit_freq;
+	#ifdef CONFIG_INTELLI_THERMAL
+ 	uint32_t freq_control_mask;
+	#endif
 };
 
-#ifdef CONFIG_THERMAL_MONITOR
+#if defined(CONFIG_THERMAL_MONITOR) || defined(CONFIG_INTELLI_THERMAL)
 extern int msm_thermal_init(struct msm_thermal_data *pdata);
 #else
 static inline int msm_thermal_init(struct msm_thermal_data *pdata)
