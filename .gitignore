@@ -84,3 +84,4 @@
  *.orig
  *~
  \#*#
+clean_kn.sh

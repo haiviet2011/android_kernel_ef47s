@@ -392,7 +392,7 @@ $(info "========================================================================
 PANTECH_ANDROID_FLAGS := -DFEATURE_AARM_RELEASE_MODE \
 						-DT_EF47S -I $(srctree)/include/pantech \
 						-include $(srctree)/include/pantech/CUST_PANTECH.h \
-						-DFIRM_VER=\"S0836217\" -DSYS_MODEL_NAME=\"EF47S\" \
+						-DFIRM_VER=\"S0214217\" -DSYS_MODEL_NAME=\"EF47S\" \
 						-DPANTECH_MODEL_NAME=\"IM-A830S\" \
 						-DFS_USER_DATA_VER=34 \
 						-DPANTECH_STORAGE_INTERNAL_EMUL
